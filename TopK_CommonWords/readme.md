@@ -1,3 +1,18 @@
+# Top K Common Words Across 2 Files
+
+MapReduce v2 Application running on School of Computing YARN/HDFS Cluster.
+
+## Explanation
+- MR Job 1 counts File 1
+- MR Job 2 counts File 2
+- MR Job 3 takes outputs of each, and takes min(f1, f2) and spills results to disk. 
+
+## Caveats and Improvements: 
+1. Only works for 2 files. Need to modify to handle arbitrary number of files. 
+2. Job 3 assumes everything will fit in 1 Reducer - might not be true && bottleneck. 
+3. Imperative code not the cleanest because I suck at Java!
+
+## Instructions given by Prof: 
 ############### Assignment 1-1: Top K Common Words #####################
 
 Command Format: TopkCommonWords <input_file1> <input_file2> <stopwords> <output_dir>
